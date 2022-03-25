@@ -10,7 +10,8 @@
     "format:write": "prettier --write .",
     "lint:check": "eslint .",
     "lint:fix": "eslint --fix .",
-    "start": "nodemon index.ts"
+    "start": "nodemon index.ts",
+    "release": "standard-version"
   },
   "husky": {
     "hooks": {
@@ -29,8 +30,7 @@
     "express": "^4.17.3",
     "global": "^4.4.0",
     "mongoose": "^6.2.8",
-    "multer": "^1.4.4",
-    "standard-version": "^9.3.2"
+    "multer": "^1.4.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
