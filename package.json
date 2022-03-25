@@ -11,16 +11,8 @@
     "lint:check": "eslint .",
     "lint:fix": "eslint --fix .",
     "start": "nodemon index.ts",
-    "release": "standard-version"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*": "prettier --write"
+    "release": "standard-version",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
