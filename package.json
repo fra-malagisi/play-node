@@ -10,7 +10,7 @@
     "format:write": "prettier --write .",
     "lint:check": "eslint .",
     "lint:fix": "eslint --fix .",
-    "start": "nodemon src/app.ts",
+    "dev": "nodemon src/app.ts",
     "release": "standard-version",
     "prepare": "husky install"
   },
