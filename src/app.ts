@@ -3,11 +3,11 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import { corsUrl, environment } from './config';
 import { ApiError, InternalError, NotFoundError } from './core/ApiError';
+import Logger from './core/Logger';
 
-/**
- *  TODO:
- *  - Add Logger
- */
+process.on('uncaughtException', (e) => {
+  Logger.error(e);
+});
 
 const app = express();
 app.use(bodyParser.json({ limit: '10mb' }));
@@ -38,3 +38,5 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 app.listen(3000, () => {
   console.log('The application is listening on port 3000!');
 });
+
+export default app;
