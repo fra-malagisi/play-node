@@ -5,14 +5,17 @@
   "main": "src/app.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
-    "build": "tsc --project ./",
+    "build": "npm run clean && npm run build-ts",
+    "build-ts": "tsc",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
     "lint:check": "eslint .",
     "lint:fix": "eslint --fix .",
-    "dev": "nodemon src/app.ts",
+    "dev": "nodemon -r dotenv/config src/server.ts",
     "release": "standard-version",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "clean": "rimraf ./build",
+    "watch-node": "nodemon -r dotenv/config build/server.js"
   },
   "keywords": [],
   "author": "",
